@@ -1,0 +1,5 @@
+#   In case of anything copywrighted or should not be shared.
+course_materials/*
+
+#   Because this always shows up
+*/.DS_Store
