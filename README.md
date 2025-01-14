@@ -5,7 +5,7 @@ Code, including learning and practice, for the UCSD Python Programming Fundament
 
 Different folders will be built for the different assignments.
 
-Textbook - *Think Python* by Allen Downey, published by O'Reilly. It's simple, but Dr. Chen likes the way he approaches things.
+Textbook - *Think Python* ([link to old, free book](https://greenteapress.com/thinkpython2/html/index.html)) by Allen Downey, published by O'Reilly. It's simple, but Dr. Chen likes the way he approaches things.
 
 Any Python version 3.8/3.10 and up is fine.
 
