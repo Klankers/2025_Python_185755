@@ -13,7 +13,7 @@ Built a new conda environment called `classwork` for this course. Got through th
 
 The last installation thing will be the linter, `flake8`. It's good for code consistency. See pep8.org for information about the style guide. **Points will be subtracted if the code does not pass the flake8 linter.** Execute the linter from the command line by using `flake8 HW1.py` - if it passes, no warnings will be printed out.
 
-It looks like the course uses REPL for development, or at least, the professor does. However, she just requires some sort of Python shell. `ipython` or Jupyter notebooks work.
+It looks like the course uses REPL for development, or at least, the professor does. **Reminder:** This is just the Python shell that comes installed. However, she just requires some sort of Python shell. `ipython` or Jupyter notebooks work.
 
 Key takeaways and major topics from *the course introduction*:
 * Emphasis on "Pythonic" computer science abstractions
