@@ -1,5 +1,5 @@
 """Homework 1 for CSE-41273"""
-# Your name goes here, but keep the # and a space.
+# Aaron Mau
 # ^^^^^^ Lines beginning with a "# " are comments.
 # So, MY homework would have LINE 2 as:
 # Diane Chen
@@ -21,7 +21,28 @@ def silly_case(sentence):
         in upper case.
         Return the silly case string.
     """
-    # Put your code here
+    # Instructions call for no for loops, map(), list comp., or help. functions
+    # Recursion - have the function call itself
+    # Not sure how to consolidate the word, *rest, if rest, and return lines
+    lines = sentence.splitlines()  # Start by breaking up potential poem chars
+    if len(lines) > 1:
+        # New line chars present
+        line = lines[0]
+        word, *rest = line.split(" ", 1)
+        new_word = word[0].lower() + word[1:].upper()
+        if rest:
+            rest = silly_case(rest[0])
+        line = new_word + " " + rest
+        return line + "\n" + silly_case("\n".join(lines[1:]))
+    else:
+        # Single line (remaining)
+        word, *rest = lines[0].split(" ", 1)
+        new_word = word[0].lower() + word[1:].upper()
+        if rest:
+            return new_word + " " + silly_case(rest[0])
+        else:
+            # Last word
+            return new_word
 
 
 # Function 2
@@ -29,7 +50,7 @@ def dash_stringify(list_of_words):
     """Given a list of word strings, return a single string with all the word
         strings together, with ' - ' in between the words.
     """
-    # Put your code here
+    return ' - '.join(list_of_words)
 
 
 # Function 3
@@ -37,7 +58,20 @@ def is_perfect_square(any_number):
     """Given any number, return True if it is a perfect square,
         else return False
     """
-    # Put your code here
+    # Def. perfect square: Integer that is square of an integer (i^2).
+    if isinstance(any_number, int):
+        # flake8 did not like type(any_number) != int:
+        # Could do a int(any_number) for if strings are passed, but that might
+        # require try-else stuff
+        if any_number.is_integer():
+            any_number = int(any_number)
+        else:
+            return False
+    root = any_number ** (1/2)
+    if root.is_integer():
+        return True
+    else:
+        return False
 
 
 # Function 4
@@ -45,7 +79,17 @@ def comfort_level(temperature):
     """Given a temperature in Fahrenheit, return a string that is a
         comment on the comfort level.
     """
-    # Put your code here
+    # Definitions for comfort level from instructions
+    if temperature < 60:
+        return "Too cold"
+    elif temperature < 70:
+        return "A bit chilly"
+    elif temperature > 82:
+        return "Too hot"
+    elif temperature > 74:
+        return "A bit warm"
+    else:
+        return "A comfortable temperature"
 
 
 # Function 5
@@ -56,7 +100,11 @@ def fstring_practice(numbers, divisor):
         You must use f-strings!
         See instructions for more details.
     """
-    # Put your code here
+    list_out = []
+    for n in numbers:
+        divided = n / divisor
+        list_out.append(f"{n} divided by {divisor} is {divided}")
+    return list_out
 
 
 # Function 6
@@ -69,7 +117,11 @@ def string_info(sentences):
             number of words in the line
         See the instructions for more details.
     """
-    # Put your code here
+    listed_sent = sentences.splitlines()
+    dictionary = {}
+    for i, sentence in enumerate(listed_sent, start=1):
+        dictionary[i] = (sentence, len(sentence), len(sentence.split()))
+    return dictionary
 
 
 # Function 7
@@ -78,4 +130,24 @@ def get_earliest(date1, date2):
         DO NOT use the datetime module!
         Use string manipulation and unpacking.
     """
-    # Put your code here
+    mm1, dd1, yyyy1 = date1.split("/")
+    mm2, dd2, yyyy2 = date2.split("/")
+    if int(yyyy2) > int(yyyy1):
+        return date1
+    elif int(yyyy2) < int(yyyy1):
+        return date2
+    else:
+        # The years are the same
+        if int(mm2) > int(mm1):
+            return date1
+        elif int(mm2) < int(mm1):
+            return date2
+        else:
+            # The months are the same
+            if int(dd2) > int(dd1):
+                return date1
+            elif int(dd2) < int(dd1):
+                return date2
+            else:
+                # The dates are the same to the day
+                return date1
