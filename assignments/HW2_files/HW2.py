@@ -86,7 +86,6 @@ def get_word_codes(words):
         letters of the word that is its key.
     """
     return {
-        word: [ord(char)
-               for char in word]
+        word: [ord(char) for char in word]
         for word in words
     }
