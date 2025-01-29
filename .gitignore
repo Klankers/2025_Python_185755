@@ -7,3 +7,4 @@ course_materials/*
 
 #   Automatically ignore assignment documentation, which can get bulky
 *.pdf
+*_answers.py
