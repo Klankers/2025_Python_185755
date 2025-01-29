@@ -23,7 +23,8 @@ def words_with_letter(sentence, letter):
         but the result should have the correct case of the original word.
     """
     return [
-        words for words in sentence.split(" ")
+        words
+        for words in sentence.split(" ")
         if letter.lower() in words.lower()
     ]
 
@@ -33,7 +34,10 @@ def power_list(numbers):
     """Given a list of numbers, return a new list where each element is the
         corresponding element of the list to the power of its list index.
     """
-    return [val ** index for index, val in enumerate(numbers)]
+    return [
+        val ** index
+        for index, val in enumerate(numbers)
+    ]
 
 
 # Function 4
@@ -51,7 +55,8 @@ def get_vowel_names(names):
     """Return a list containing all names given that start with a vowel."""
     vowels = ["a", "e", "i", "o", "u"]  # Not y
     return [
-        name for name in names
+        name
+        for name in names
         if name[0].lower() in vowels
     ]
 
@@ -81,6 +86,7 @@ def get_word_codes(words):
         letters of the word that is its key.
     """
     return {
-        word: [ord(char) for char in word]
+        word: [ord(char)
+               for char in word]
         for word in words
     }
