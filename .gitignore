@@ -5,6 +5,10 @@ course_materials/*
 */.DS_Store
 .DS_Store
 
+#   Ignore test outputs
+*.pyc
+
 #   Automatically ignore assignment documentation, which can get bulky
 *.pdf
 *_answers.py
+
